@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<title>Django Interview Task</title>
+	<meta charset = "utf-8"/>
+	
+	<link rel = "stylesheet" href= "/static/css/styles.css" type = "text/css"/>
+	<meta name = "viewport content = "width-device-width, initial-scale=1.0"/>
+
+</head>
+
+<body class = "body">
+	<header class = "mainHead">
+		<img src = "/static/img/picture.jpg" width = "700" height = "144">
+		
+		<nav><ul>
+			<li class = "active"> <a href = "/blog">Home </a></li>
+			<li><a href = "/company">Companies </a></li>
+			<li><a href = "/company">News </a></li>
+			<li><a href = "/company">Archive </a></li>
+			<li><a href = "/create_comment">Comment on a company</a></li>
+			<li><a href="/">Login</a> </li>
+		</ul>
+		</nav>
+	</header>
+	
+	<aside class = "sideInfo">
+		<article>
+			<h3>Recent News</h3>
+			{% for post in object_list %}
+			<p>{{ post.tagline}}<a href = "/company
+			/{{post.id}}">{{post.name}}</a></p>
+			{% endfor %}
+		</article>
+	</aside>
+	
+	{% block content %}
+	{% endblock %}
+
+	
+	<footer class = "mainFooter">
+		<p>Copyright information:2015</p>
+	</footer>
+		
+
+</body>
+</html>

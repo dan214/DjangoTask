@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+{% for post in object_list %}
+<h3><a href = "/company/{{post.id}}" >{{ post.name }} </a></h3>
+<div class = "post_meta">
+	on{{ post.tagline }}
+</div>
+
+<div class = "post_body">
+	{{ post.description|safe|linebreaks }}
+</div>
+{% endfor %}
+{% endblock %}
